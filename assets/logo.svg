@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" role="img" aria-label="GeoRise">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="80" fill="#0a0713" rx="14"/>
+  <circle cx="40" cy="40" r="9" fill="none" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="40" cy="40" r="3" fill="#22d3ee"/>
+  <path d="M40 22 A18 18 0 0 1 58 40" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M40 58 A18 18 0 0 1 22 40" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <text x="64" y="50" font-family="Segoe UI, system-ui, sans-serif" font-size="30" font-weight="800" fill="#f1ecfb" letter-spacing="-0.5">Geo<tspan fill="#22d3ee">Rise</tspan></text>
+  <text x="66" y="66" font-family="Segoe UI, system-ui, sans-serif" font-size="9" fill="#a99ec9" letter-spacing="1.5">THE AI SEARCH VISIBILITY SYSTEM</text>
+</svg>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeoRise™ — Your Downloads</title>
+<style>
+  :root { --bg:#0a0713; --panel:#130f22; --line:#2a2148; --txt:#f1ecfb; --dim:#a99ec9; --accent:#8b5cf6; --accent2:#22d3ee; --good:#34d399; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--txt); font-family:'Segoe UI',system-ui,sans-serif; min-height:100vh; }
+  .wrap { max-width:800px; margin:0 auto; padding:40px 20px 80px; }
+  .logo { font-size:22px; font-weight:800; margin-bottom:6px; }
+  .logo span { color:var(--accent2); }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:32px; }
+  .gate { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:28px; }
+  .gate h2 { font-size:18px; margin-bottom:8px; }
+  .gate p { color:var(--dim); font-size:13px; margin-bottom:18px; }
+  input { width:100%; background:var(--bg); border:1px solid var(--line); color:var(--txt); padding:12px 14px; border-radius:8px; font-size:15px; margin-bottom:12px; }
+  .btn { background:linear-gradient(135deg,var(--accent),#6d28d9); color:#fff; border:none; padding:12px 20px; border-radius:8px; font-weight:700; font-size:14px; cursor:pointer; width:100%; }
+  .btn:hover { filter:brightness(1.12); }
+  .err { color:var(--bad); font-size:13px; margin-top:10px; min-height:18px; }
+  .locked { display:none; }
+  .files { display:grid; gap:12px; }
+  .file { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; }
+  .file h3 { font-size:15px; margin-bottom:3px; }
+  .file p { color:var(--dim); font-size:12.5px; line-height:1.45; }
+  .file .btn { width:auto; padding:9px 16px; font-size:12.5px; flex-shrink:0; }
+  .badge { display:inline-block; background:rgba(52,211,153,0.12); color:var(--good); font-size:11px; padding:2px 10px; border-radius:12px; font-weight:600; margin-bottom:6px; }
+  footer { margin-top:40px; text-align:center; color:var(--dim); font-size:12px; }
+  .start { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; }
+  .start h3 { font-size:16px; margin-bottom:8px; }
+  .start ol { padding-left:20px; color:var(--dim); font-size:13.5px; line-height:1.9; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo">🚀 Geo<span>Rise</span>™</div>
+  <div class="sub">The GEO Playbook™ — your member downloads</div>
+
+  <div id="gateBox" class="gate">
+    <h2>🔐 Unlock your downloads</h2>
+    <p>Enter the email you purchased with and your personal access code (sent in your order confirmation email).</p>
+    <input id="email" type="email" placeholder="you@email.com" autocomplete="email">
+    <input id="code" type="text" placeholder="GR-XXXXX-XXXXX" autocomplete="off">
+    <button class="btn" onclick="unlock()">Unlock →</button>
+    <div class="err" id="err"></div>
+  </div>
+
+  <div id="memberArea" class="locked">
+    <div class="start">
+      <span class="badge">✅ Unlocked</span>
+      <h3>Start here — the 5-Layer Citation Stack</h3>
+      <ol>
+        <li><b>AUDIT:</b> read The AEO Decoder + run the 20-minute AI test (screenshot your baseline)</li>
+        <li><b>STRUCTURE:</b> use the Answer Blocks Engine to rewrite your top page answer-first</li>
+        <li><b>ENTITY:</b> lock your entity statement everywhere (Entity Builder) — then</li>
+        <li><b>CITE &amp; TRACK:</b> climb the Citation Ladder and run the weekly ritual</li>
+      </ol>
+    </div>
+    <div class="files">
+      <div class="file">
+        <div><h3>📘 1. The AEO Decoder</h3><p>Plain-English crash course — why AI search broke your traffic + the 5-Layer Citation Stack. Start here.</p></div>
+        <button class="btn" onclick="dl('01-aeo-crash-course.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧩 2. The Answer Blocks Engine</h3><p>5 page templates + the answer-first rewrite drill. Rewrite any page so an AI can quote it cleanly.</p></div>
+        <button class="btn" onclick="dl('02-answer-blocks-engine.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🪪 3. The Entity Builder</h3><p>Become one unambiguous thing. Entity statement formula + a 12-point identity scorecard.</p></div>
+        <button class="btn" onclick="dl('03-entity-builder.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🪜 4. The Citation Ladder</h3><p>The 6-rung source hierarchy + 4 outreach scripts to build third-party corroboration.</p></div>
+        <button class="btn" onclick="dl('04-citation-ladder.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🧾 5. The AI Answer Schema Pack</h3><p>Copy-paste JSON-LD: Organization, Product, FAQPage, HowTo, Person, Article + an FAQ question bank.</p></div>
+        <button class="btn" onclick="dl('05-answer-schema-pack.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🌉 6. The GEO vs SEO Bridge</h3><p>Where classic search ends and the answer layer begins — the unified 2026 playbook + measurement bridge.</p></div>
+        <button class="btn" onclick="dl('06-geo-seo-bridge.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>📊 7. The AI Visibility Tracker</h3><p>The 20-minute weekly ritual, a 10-question prompt bank, layer health check, and citation log.</p></div>
+        <button class="btn" onclick="dl('07-visibility-tracker.pdf', this)">Download</button>
+      </div>
+      <div class="file">
+        <div><h3>🗓️ 8. The 30-Day AEO Rollout Plan</h3><p>Week-by-week: audit, restructure, lock your entity, earn citations, then compound.</p></div>
+        <button class="btn" onclick="dl('08-30-day-rollout.pdf', this)">Download</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>GeoRise™ · educational business information · results depend on your execution</footer>
+</div>
+
+<script>
+function unlock() {
+  const email = document.getElementById('email').value.trim();
+  const code = document.getElementById('code').value.trim();
+  const err = document.getElementById('err');
+  if (!email || !code) { err.textContent = 'Please enter both email and access code.'; return; }
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code }) })
+    .then(r => r.json())
+    .then(d => {
+      if (d.ok) {
+        sessionStorage.setItem('gr_email', email);
+        sessionStorage.setItem('gr_code', code);
+        document.getElementById('gateBox').style.display = 'none';
+        document.getElementById('memberArea').classList.remove('locked');
+        document.getElementById('memberArea').style.display = 'block';
+        err.textContent = '';
+      } else {
+        err.textContent = d.error || 'Access denied. Check your code and email.';
+      }
+    })
+    .catch(() => { err.textContent = 'Network error — try again.'; });
+}
+
+function dl(file, btn) {
+  const email = sessionStorage.getItem('gr_email');
+  const code = sessionStorage.getItem('gr_code');
+  if (!email || !code) { alert('Session expired — please unlock again.'); location.reload(); return; }
+  const orig = btn.textContent;
+  btn.textContent = '⏳ …';
+  btn.disabled = true;
+  fetch('/api/download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, code, file }) })
+    .then(async r => {
+      if (!r.ok) { const d = await r.json().catch(() => ({})); throw new Error(d.error || 'Download failed (' + r.status + ')'); }
+      const blob = await r.blob();
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      btn.textContent = '✅ Sent';
+    })
+    .catch(e => { alert(e.message); btn.textContent = orig; })
+    .finally(() => { btn.disabled = false; setTimeout(() => { if (btn.textContent === '✅ Sent') btn.textContent = orig; }, 2500); });
+}
+
+// auto-unlock if already verified this session
+const em = sessionStorage.getItem('gr_email');
+const ec = sessionStorage.getItem('gr_code');
+if (em && ec) {
+  fetch('/api/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: em, code: ec }) })
+    .then(r => r.json())
+    .then(d => { if (d.ok) { document.getElementById('gateBox').style.display = 'none'; document.getElementById('memberArea').classList.remove('locked'); document.getElementById('memberArea').style.display = 'block'; } });
+}
+document.getElementById('code').addEventListener('keydown', (e) => { if (e.key === 'Enter') unlock(); });
+</script>
+</body>
+</html>
